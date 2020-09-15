@@ -51,5 +51,7 @@ class container{
         frame.setResizable(false);
         frame.setVisible(true);
         frame.add(gRender);
+        frame.addKeyListener(new ActionListener(this));
+        new gameTickThread(this);
     }
 }

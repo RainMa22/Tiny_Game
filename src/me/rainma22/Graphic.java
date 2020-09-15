@@ -12,6 +12,8 @@ public class Graphic extends JPanel {
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         g.drawImage(c.player,c.playerCord.x,c.playerCord.y, this);
+        g.drawImage(c.player,c.playerCord.x+c.frame.getWidth(),c.playerCord.y, this);
+        g.drawImage(c.player,c.playerCord.x-c.frame.getWidth(),c.playerCord.y, this);
         for (coords cs:c.bulletCords) {
             g.drawImage(c.bullet,cs.x,cs.y,null);
         }
@@ -21,6 +23,6 @@ public class Graphic extends JPanel {
         for(coords cs:c.ebulletCords){
             g.drawImage(c.ebullet,cs.x,cs.y,null);
         }
-        repaint();
+        new gThread(this);
     }
 }
