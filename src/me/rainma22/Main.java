@@ -30,6 +30,7 @@ class container{
     public BufferedImage ebullet= new BufferedImage(1,1,BufferedImage.TYPE_INT_ARGB);
     public ArrayList<coords> ebulletCords=new ArrayList<>(0);
     public Graphic gRender=new Graphic(this);
+    public ActionListener al;
     public container() throws IOException {
         player.setRGB(1,0,new Color(0, 0, 0).getRGB());
         player.setRGB(0,1,new Color(0,0,0).getRGB());
@@ -51,7 +52,9 @@ class container{
         frame.setResizable(false);
         frame.setVisible(true);
         frame.add(gRender);
-        frame.addKeyListener(new ActionListener(this));
+        al=new ActionListener(this);
+        frame.addKeyListener(al);
+        frame.addMouseListener(al);
         new gameTickThread(this);
     }
 }

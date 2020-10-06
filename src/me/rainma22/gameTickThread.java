@@ -27,7 +27,23 @@ public gameTickThread(container c){
                 }
                 for (coords cs:c.ebulletCords){
                     cs.y+=10;
-
+                }
+                if (c.al.up){
+                    c.playerCord.y -= 10;
+                    if (c.playerCord.y < 0 + c.player.getHeight()) c.playerCord.y = 0 + c.player.getHeight();
+                }
+                if (c.al.down){
+                    c.playerCord.y += 10;
+                    if (c.playerCord.y > c.frame.getHeight() - 40 - c.player.getHeight())
+                        c.playerCord.y = c.frame.getHeight() - 40 - c.player.getHeight();
+                }
+                if (c.al.left){
+                    c.playerCord.x -= 10;
+                    if(c.playerCord.x<0)c.playerCord.x+=c.frame.getWidth();
+                }
+                if (c.al.right){
+                    c.playerCord.x += 10;
+                    if(c.playerCord.x>c.frame.getWidth()-c.player.getWidth()/2)c.playerCord.x-=c.frame.getWidth();
                 }
                 if (b==TICK_SPEED){
                     for (coords cs:c.enemyCords){
