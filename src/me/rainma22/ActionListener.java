@@ -20,20 +20,20 @@ public class ActionListener implements KeyListener, MouseListener {
     @Override
     public void keyPressed(KeyEvent keyEvent) {
         if (keyEvent.getExtendedKeyCode() == KeyEvent.VK_DOWN) {
-            System.out.println("Down Pressed");
+            //System.out.println("Down Pressed");
             c.playerCord.y += 10;
             if (c.playerCord.y > c.frame.getHeight() - 40 - c.player.getHeight())
                 c.playerCord.y = c.frame.getHeight() - 40 - c.player.getHeight();
         } else if (keyEvent.getExtendedKeyCode() == KeyEvent.VK_UP) {
-            System.out.println("Up Pressed");
+            //System.out.println("Up Pressed");
             c.playerCord.y -= 10;
             if (c.playerCord.y < 0 + c.player.getHeight()) c.playerCord.y = 0 + c.player.getHeight();
         } else if (keyEvent.getExtendedKeyCode() == KeyEvent.VK_LEFT) {
-            System.out.println("left Pressed");
+            //System.out.println("left Pressed");
             c.playerCord.x -= 10;
             if(c.playerCord.x<0)c.playerCord.x+=c.frame.getWidth();
         } else if (keyEvent.getExtendedKeyCode() == KeyEvent.VK_RIGHT) {
-            System.out.println("right Pressed");
+            //System.out.println("right Pressed");
             c.playerCord.x += 10;
             if(c.playerCord.x>c.frame.getWidth()-c.player.getWidth()/2)c.playerCord.x-=c.frame.getWidth();
     } else if (keyEvent.getExtendedKeyCode()==KeyEvent.VK_SPACE){
