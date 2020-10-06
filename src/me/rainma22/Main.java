@@ -42,7 +42,7 @@ class container{
         enemy.setRGB(2,0,new Color(255,0,0).getRGB());
         bullet.setRGB(0,0,new Color(0,0,0).getRGB());
         ebullet.setRGB(0,0,new Color(255,0,0).getRGB());
-        frame.setBounds(avaliableSpace.width/2-avaliableSpace.width/5,0,(avaliableSpace.width/5)*2,avaliableSpace.height-100);
+        frame.setBounds(avaliableSpace.width/2-avaliableSpace.width/5,0,(avaliableSpace.width/5)*2,avaliableSpace.height-40);
         player= ImageResize.Scaled(player,frame.getWidth()/10,frame.getWidth()/15);
         playerCord=new coords(frame.getWidth()/2-(player.getWidth()/2),frame.getHeight()-40-player.getHeight());
         enemy=ImageResize.Scaled(enemy,frame.getWidth()/10,frame.getWidth()/15);
