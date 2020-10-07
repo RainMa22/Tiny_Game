@@ -6,6 +6,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
 public class ActionListener implements KeyListener, MouseListener {
     private container c;
@@ -36,7 +37,9 @@ public class ActionListener implements KeyListener, MouseListener {
             //System.out.println("right Pressed");
 
     } else if (keyEvent.getExtendedKeyCode()==KeyEvent.VK_SPACE){
-            c.bulletCords.add(new coords(c.playerCord.x+c.player.getWidth()/2-c.bullet.getWidth()/2,c.playerCord.y ));
+            ArrayList<coords> temp= (ArrayList<coords>) c.bulletCords.clone();
+            temp.add(new coords(c.playerCord.x+c.player.getWidth()/2-c.bullet.getWidth()/2,c.playerCord.y ));
+            c.bulletCords= (ArrayList<coords>) temp.clone();
         }
     }
     @Override
@@ -66,9 +69,9 @@ public class ActionListener implements KeyListener, MouseListener {
     }
     @Override
     public void mousePressed(MouseEvent mouseEvent) {
-            if (mouseEvent.getButton()==MouseEvent.BUTTON1){
-                c.bulletCords.add(new coords(c.playerCord.x+c.player.getWidth()/2-15,c.playerCord.y));
-            }
+        ArrayList<coords> temp= (ArrayList<coords>) c.bulletCords.clone();
+        temp.add(new coords(c.playerCord.x+c.player.getWidth()/2-c.bullet.getWidth()/2,c.playerCord.y ));
+        c.bulletCords= (ArrayList<coords>) temp.clone();
         }
     @Override
     public void mouseReleased(MouseEvent mouseEvent) {
